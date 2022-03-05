@@ -15,7 +15,7 @@ public class SudokuSolver {
 
         printTheBoard(board);
         if(solveTheBoard(board)){
-            System.out.println("solved ! ");
+            System.out.println("\n    Solved ! ");
         }
         else{
             System.out.println("Can't solve");
@@ -75,8 +75,8 @@ public class SudokuSolver {
     }
 
     private static boolean checkingPlacement(int[][]board, int number, int column, int row){
-        return !checkingBox(board,number,column,row) && !checkingColumn(board,number,column)
-                && !checkingRow(board,number,row);
+        return !(checkingBox(board,number,column,row) && checkingColumn(board,number,column)
+                && checkingRow(board,number,row));
 
     }
     private static boolean solveTheBoard(int[][] board){
